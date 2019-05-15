@@ -42,6 +42,7 @@ class BuildingTest < Minitest::Test
       expected = @spencer
       actual = @building.renter_with_highest_rent
       assert_equal expected, actual
+
     @a1.add_renter(@jessie)
       expected = @jessie
       actual = @building.renter_with_highest_rent
@@ -55,6 +56,7 @@ class BuildingTest < Minitest::Test
       expected = {"Spencer" => 11988}
       actual = @building.annual_breakdown
       assert_equal expected, actual
+
     @a1.add_renter(@jessie)
       expected = {"Jessie" => 14400, "Spencer" => 11988}
       actual = @building.annual_breakdown

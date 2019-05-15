@@ -30,7 +30,7 @@ class ApartmentTest < Minitest::Test
   def test_it_has_bathrooms
     expected = 1
     actual = @a1.bathrooms
-  assert_equal expected, actual
+    assert_equal expected, actual
   end
 
   def test_it_has_bedrooms
