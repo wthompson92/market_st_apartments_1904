@@ -39,13 +39,25 @@ class BuildingTest < Minitest::Test
     @building.add_unit(@a1)
     @building.add_unit(@b2)
     @b2.add_renter(@spencer)
-    expected = @spencer
-    actual = @building.renter_with_highest_rent
-    assert_equal expected, actual 
-
+      expected = @spencer
+      actual = @building.renter_with_highest_rent
+      assert_equal expected, actual
     @a1.add_renter(@jessie)
-    expected = @jessie
-    actual = @building.renter_with_highest_rent
-    assert_equal expected, actual
+      expected = @jessie
+      actual = @building.renter_with_highest_rent
+      assert_equal expected, actual
+  end
+
+  def test_annual_breakdown
+    @building.add_unit(@a1)
+    @building.add_unit(@b2)
+    @b2.add_renter(@spencer)
+      expected = {"Spencer" => 11988}
+      actual = @building.annual_breakdown
+      assert_equal actual, expected
+    @a1.add_renter(@jessie)
+      expected = {"Jessie" => 14400, "Spencer" => 11988}
+      actual = @building.annual_breakdown
+      assert_equal actual, expected
   end
 end
