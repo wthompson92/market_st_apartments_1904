@@ -54,10 +54,10 @@ class BuildingTest < Minitest::Test
     @b2.add_renter(@spencer)
       expected = {"Spencer" => 11988}
       actual = @building.annual_breakdown
-      assert_equal actual, expected
+      assert_equal expected, actual
     @a1.add_renter(@jessie)
       expected = {"Jessie" => 14400, "Spencer" => 11988}
       actual = @building.annual_breakdown
-      assert_equal actual, expected
+      assert_equal expected, actual
   end
 end
